@@ -18,7 +18,7 @@
 
 ## 🚀 News
 
-* **2026.08.15** — Initial release of **SCDR-RADR**.
+* **2026.08.15** — Initial release of **BasicRSISR**.
 * **2026.08.15** — Evaluation code for **4× remote sensing image super-resolution** has been released.
 
 ---
