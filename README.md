@@ -4,9 +4,6 @@
   <b>Official PyTorch implementation of SCDR-RADR for remote sensing image super-resolution.</b>
 </p>
 
-<p align="center">
-  Fengyuan Zhang · Xueying Wang · Xinpeng Zhao · Zhengyu Liang · Haoufei Liu · Jungang Yang · Yingqian Wang
-</p>
 
 <p align="center">
   <a href="#-news">News</a> |
