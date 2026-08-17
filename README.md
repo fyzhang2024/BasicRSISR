@@ -30,7 +30,7 @@
 Dictionary-enhanced super-resolution can provide useful high-frequency information, but the retrieved dictionary responses are not uniformly reliable. In ambiguous remote sensing regions, a dictionary response may increase local reconstruction error instead of reducing it.
 
 <p align="center">
-  <img src="./fig/motivation.png" width="95%" alt="Motivation">
+  <img src="fig/motivation.png" width="95%" alt="Motivation">
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@ Dictionary-enhanced super-resolution can provide useful high-frequency informati
 SCDR-RADR combines counterfactual reliability supervision, reliability-aware dictionary refinement, and complementary dual-route reconstruction.
 
 <p align="center">
-  <img src="./fig/overall_framework.png" width="95%" alt="SCDR-RADR Framework">
+  <img src="fig/overall_framework.png" width="95%" alt="SCDR-RADR Framework">
 </p>
 
 <p align="center">
@@ -76,7 +76,7 @@ All learning-based methods are trained using the same AID training data and eval
 ### Visual Comparisons
 
 <p align="center">
-  <img src="./fig/Visual-AID.png" width="100%" alt="Visual comparison on AID900">
+  <img src="fig/Visual-AID.png" width="100%" alt="Visual comparison on AID900">
 </p>
 
 <p align="center">
@@ -86,7 +86,7 @@ All learning-based methods are trained using the same AID training data and eval
 <br>
 
 <p align="center">
-  <img src="./fig/Visual-DIOR+DOTA.png" width="100%" alt="Visual comparison on DOTA and DIOR1000">
+  <img src="fig/Visual-DIOR+DOTA.png" width="100%" alt="Visual comparison on DOTA and DIOR1000">
 </p>
 
 <p align="center">
