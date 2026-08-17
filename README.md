@@ -4,10 +4,10 @@
   <b>Official PyTorch implementation of SCDR-RADR for remote sensing image super-resolution.</b>
 </p>
 
-
 <p align="center">
   <a href="#-news">News</a> |
   <a href="#-motivation">Motivation</a> |
+  <a href="#-framework">Framework</a> |
   <a href="#-results">Results</a> |
   <a href="#-data-preparation">Data</a> |
   <a href="#-testing">Testing</a> |
@@ -18,8 +18,10 @@
 
 ## 🚀 News
 
-* **2026.08.15** — Initial release of **BasicRSISR**.
+* **2026.08.17** — The **prepared training and evaluation data** used in our experiments, including the **AID training set, AID900, DOTA, and DIOR1000**, have been released.
+* **2026.08.17** — The **pre-trained checkpoints of all compared methods** for **4× remote sensing image super-resolution** have been released.
 * **2026.08.15** — Evaluation code for **4× remote sensing image super-resolution** has been released.
+* **2026.08.15** — Initial release of **BasicRSISR**.
 
 ---
 
@@ -95,40 +97,46 @@ All learning-based methods are trained using the same AID training data and eval
 
 ## 🎁 Data Preparation
 
-We evaluate **4× RSISR** on three benchmarks:
+All learning-based models are trained only on the **AID training set** and evaluated on three benchmarks:
 
 * **AID900:** 900 images sampled from the AID validation set.
 * **DOTA:** the DOTA evaluation set used in the reported experiments.
 * **DIOR1000:** 1000 images sampled from the DIOR validation set.
 
-All learning-based models are trained only on the **AID training set**.
-
 LR images are generated using bicubic downsampling following the data-preparation protocol used in TTST. Evaluation uses PSNR and SSIM on the luminance channel, with four boundary pixels excluded for 4× SR.
 
-> Dataset download links will be provided soon.
+> **Dataset Download:** [Baidu Netdisk](https://pan.baidu.com/s/1iQw6piIMrf5VSsT0R4DcQA)  
+> **Extraction Code:** `nudt`
 
 The datasets should be organized as follows:
 
 ```text
 datasets/
-├── AID/
-│   ├── HR/
+├── train/    # AID training set
+│   ├── GT/
 │   └── LR/
-├── DOTA/
-│   ├── HR/
-│   └── LR/
-└── DIOR/
-    ├── HR/
-    └── LR/
+└── test/
+    ├── AID900/
+    │   ├── GT/
+    │   └── LR/
+    ├── DIOR1000/
+    │   ├── GT/
+    │   └── LR/
+    └── DOTA/
+        ├── GT/
+        └── LR/
 ```
 
 ---
 
 ## ⚡ Testing
 
-The pre-trained checkpoint will be released soon.
+The pre-trained checkpoints of **all compared methods** for **4× remote sensing image super-resolution** are now available.
 
-Once released, place the pre-trained checkpoint in the model directory specified by the evaluation configuration.
+> **Pre-trained Checkpoints:** [Baidu Netdisk](https://pan.baidu.com/s/1iQw6piIMrf5VSsT0R4DcQA)  
+> **Extraction Code:** `nudt`
+
+Download the pre-trained checkpoints and place them in the model directories specified by the corresponding evaluation configurations.
 
 Then run the evaluation script:
 
