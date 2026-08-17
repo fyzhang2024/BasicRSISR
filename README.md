@@ -103,8 +103,6 @@ All learning-based models are trained only on the **AID training set** and evalu
 * **DOTA:** the DOTA evaluation set used in the reported experiments.
 * **DIOR1000:** 1000 images sampled from the DIOR validation set.
 
-LR images are generated using bicubic downsampling following the data-preparation protocol used in TTST. Evaluation uses PSNR and SSIM on the luminance channel, with four boundary pixels excluded for 4× SR.
-
 > **Dataset Download:** [Baidu Netdisk](https://pan.baidu.com/s/1iQw6piIMrf5VSsT0R4DcQA)  
 > **Extraction Code:** `nudt`
 
