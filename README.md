@@ -5,11 +5,9 @@
 </p>
 
 <p align="center">
-  Fengyuan Zhang · Xueying Wang · Xinpeng Zhao · Zhengyu Liang · Haoufei Liu · Jungang Yang · Yingqian Wang
-</p>
-
-<p align="center">
   <a href="#-news">News</a> |
+  <a href="#-motivation">Motivation</a> |
+  <a href="#-framework">Framework</a> |
   <a href="#-results">Results</a> |
   <a href="#-data-preparation">Data</a> |
   <a href="#-testing">Testing</a> |
@@ -20,8 +18,38 @@
 
 ## 🚀 News
 
-* **2026.08.15** — Initial release of **SCDR-RADR**.
+* **2026.08.17** — The **prepared training and evaluation data** used in our experiments, including the **AID training set, AID900, DOTA, and DIOR1000**, have been released.
+* **2026.08.17** — The **pre-trained checkpoints of all compared methods** for **4× remote sensing image super-resolution** have been released.
 * **2026.08.15** — Evaluation code for **4× remote sensing image super-resolution** has been released.
+* **2026.08.15** — Initial release of **BasicRSISR**.
+
+---
+
+## 🔍 Motivation
+
+Dictionary-enhanced super-resolution can provide useful high-frequency information, but the retrieved dictionary responses are not uniformly reliable. In ambiguous remote sensing regions, a dictionary response may increase local reconstruction error instead of reducing it.
+
+<p align="center">
+  <img src="./fig/motivation.png" width="95%" alt="Motivation">
+</p>
+
+<p align="center">
+  <em>Motivation of SCDR-RADR: counterfactual evidence of unreliable dictionary responses and complementary reconstruction errors.</em>
+</p>
+
+---
+
+## 🧠 Framework
+
+SCDR-RADR combines counterfactual reliability supervision, reliability-aware dictionary refinement, and complementary dual-route reconstruction.
+
+<p align="center">
+  <img src="./fig/overall_framework.png" width="95%" alt="SCDR-RADR Framework">
+</p>
+
+<p align="center">
+  <em>Overall framework of SCDR-RADR.</em>
+</p>
 
 ---
 
@@ -45,44 +73,70 @@ All learning-based methods are trained using the same AID training data and eval
 | TTST          |     18.94M |     317.68G |   31.10 / 0.8175   |   34.38 / 0.8722   |   31.09 / 0.8265   |   32.16 / 0.8384   |
 | **SCDR-RADR** | **17.50M** | **205.61G** | **31.12 / 0.8179** | **34.56 / 0.8751** | **31.16 / 0.8278** | **32.28 / 0.8402** |
 
+### Visual Comparisons
+
+<p align="center">
+  <img src="./fig/Visual-AID.png" width="100%" alt="Visual comparison on AID900">
+</p>
+
+<p align="center">
+  <em>Visual comparison on representative AID900 scenes.</em>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="./fig/Visual-DIOR+DOTA.png" width="100%" alt="Visual comparison on DOTA and DIOR1000">
+</p>
+
+<p align="center">
+  <em>Visual comparison on representative DOTA and DIOR1000 scenes.</em>
+</p>
+
+---
+
 ## 🎁 Data Preparation
 
-We evaluate **4× RSISR** on three benchmarks:
+All learning-based models are trained only on the **AID training set** and evaluated on three benchmarks:
 
 * **AID900:** 900 images sampled from the AID validation set.
 * **DOTA:** the DOTA evaluation set used in the reported experiments.
 * **DIOR1000:** 1000 images sampled from the DIOR validation set.
 
-All learning-based models are trained only on the **AID training set**.
-
-LR images are generated using bicubic downsampling following the data-preparation protocol used in TTST. Evaluation uses PSNR and SSIM on the luminance channel, with four boundary pixels excluded for 4× SR.
-
-> Dataset download links will be provided soon.
+> **Dataset Download:** [Baidu Netdisk](https://pan.baidu.com/s/1iQw6piIMrf5VSsT0R4DcQA)  
+> **Extraction Code:** `nudt`
 
 The datasets should be organized as follows:
 
 ```text
 datasets/
-├── AID/
-│   ├── HR/
+├── train/    # AID training set
+│   ├── GT/
 │   └── LR/
-├── DOTA/
-│   ├── HR/
-│   └── LR/
-└── DIOR/
-    ├── HR/
-    └── LR/
+└── test/
+    ├── AID900/
+    │   ├── GT/
+    │   └── LR/
+    ├── DIOR1000/
+    │   ├── GT/
+    │   └── LR/
+    └── DOTA/
+        ├── GT/
+        └── LR/
 ```
 
 ---
 
 ## ⚡ Testing
 
-The pre-trained checkpoint will be released soon.
+The pre-trained checkpoints of **all compared methods** for **4× remote sensing image super-resolution** are now available.
 
-Download the released checkpoint and place it in the model directory expected by the evaluation configuration.
+> **Pre-trained Checkpoints:** [Baidu Netdisk](https://pan.baidu.com/s/1iQw6piIMrf5VSsT0R4DcQA)  
+> **Extraction Code:** `nudt`
 
-Then run the repository's evaluation script.
+Download the pre-trained checkpoints and place them in the model directories specified by the corresponding evaluation configurations.
+
+Then run the evaluation script:
 
 ```bash
 python eval_4x_y.py --config <test_config>
@@ -109,4 +163,3 @@ If you find this work useful for your research, please consider citing it.
 For questions about the code or experiments, please open a GitHub issue or contact:
 
 * Fengyuan Zhang: `zhangfengyuan24a@nudt.edu.cn`
-
