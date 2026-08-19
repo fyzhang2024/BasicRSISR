@@ -1,4 +1,4 @@
-# Reliability-Aware and Self-Competitive Dictionary Refinement for Remote Sensing Image Super-Resolution
+# BasicRSISR: An Open-Source Toolbox for Remote Sensing Image Super-Resolution
 
 <p align="center">
   <b>Official PyTorch implementation of SCDR-RADR for remote sensing image super-resolution.</b>
