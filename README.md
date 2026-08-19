@@ -1,8 +1,14 @@
 # BasicRSISR: An Open-Source Toolbox for Remote Sensing Image Super-Resolution
 
 <p align="center">
-  <b>Official PyTorch implementation of SCDR-RADR for remote sensing image super-resolution.</b>
+  <b>BasicRSISR is a unified open-source toolbox for Remote Sensing Image
+Super-Resolution (RSISR), providing benchmark methods, datasets,
+evaluation protocols, pretrained models, and reproducible experiments.</b>
 </p>
+<p align="center">
+  <b>It also includes the official PyTorch implementation of our SCDR-RADR method.</b>
+</p>
+
 
 <p align="center">
   <a href="#-news">News</a> |
